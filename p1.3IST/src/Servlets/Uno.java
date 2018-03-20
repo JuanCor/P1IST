@@ -1,6 +1,8 @@
 package Servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,7 +36,17 @@ public class Uno extends HttpServlet {
 		String url="";//Defino url para no tener que ponerle String cada vez que use url.
 
 		if(usuario.equals(usuarioad) && clave.equals(clavead)) {
-		url="/WEB-INF/TablaUsuarios.jsp";	
+		
+			ArrayList<Usuario> profesores = new ArrayList<Usuario> ();
+			Usuario user1 = new Usuario ("José Manuel","Pérez Lorenzo", "jmperez@ujaen.es");
+			Usuario user2 = new Usuario ("Alonso","Ruano Ruano","alonso@ujaen.es");
+			Usuario user3 = new Usuario ("José Enrique","Muñoz Expósito","jemunoz@ujaen.es");
+			profesores.add(user1);
+			profesores.add(user2);
+			profesores.add(user3);
+			request.setAttribute("profesores", profesores);
+			
+			url="/WEB-INF/TablaUsuarios.jsp";	
 		}else {
 			url="/WEB-INF/registro.html";
 		}

@@ -1,5 +1,4 @@
 package Servlets;
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +27,6 @@ public class Dos extends HttpServlet {
 		if(idSesion.equals("")){
 		idSesion =sesion.getId();
 		}
-		
 		String nombre = request.getParameter("nombre_u");
 		sesion.setAttribute("Nombre", nombre);
 		request.setAttribute("Nombre", nombre);
@@ -56,5 +54,4 @@ public class Dos extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }
